@@ -4,7 +4,6 @@ var taskListEl = document.querySelector("#tasks-to-do");
 function createTaskHandler(){
     var taskItemEl = document.createElement("li");
     taskItemEl.className = "task-item";
-    taskItemEl.textContent = "Another task added!";
     taskListEl.appendChild(taskItemEl);
 }
 
