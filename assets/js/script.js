@@ -235,43 +235,9 @@ function loadTasks()
         savedTasks = JSON.parse(savedTasks);
         for(var i = 0; i < savedTasks.length; i++)
         {
-            // tasks[i].id = taskIdCounter;
-
-            // var listItemEl = document.createElement("li");
-            // listItemEl.className = "task-item";
-            // listItemEl.setAttribute("data-task-id", tasks[i].id);
-            
-            // var taskInfoEl = document.createElement("div");
-            // taskInfoEl.className = "task-info";
-            // taskInfoEl.innerHTML = "<h3 class='task-name'>" + tasks[i].name + "</h3><span class='task-type'>" + tasks[i].type + "</span>";
-            // listItemEl.appendChild(taskInfoEl);
-
-            // var taskActionsEl = createTaskActions(tasks[i].id);
-            // listItemEl.appendChild(taskActionsEl);
-
-            // switch (tasks[i].status)
-            // {
-            //     case "to do":
-            //         listItemEl.querySelector("select[name='status-change']").selectedIndex = 0;
-            //         tasksToDoEl.appendChild(listItemEl);
-            //         break;
-            //     case "in progress":
-            //         listItemEl.querySelector("select[name='status-change']").selectedIndex = 1;
-            //         tasksInProgressEl.appendChild(listItemEl);
-            //         break;
-            //     case "completed":
-            //         listItemEl.querySelector("select[name='status-change']").selectedIndex = 2;
-            //         tasksCompletedEl.appendChild(listItemEl);
-            //         break;
-            // }
-
-            // taskIdCounter++;
-
-            // console.log(listItemEl);
-
             createTaskEl(savedTasks[i]);
-            var taskSelected = document.querySelector(".task-item[data-task-id = '"+savedTasks[i].id+"']");
-            var taskStatus = taskSelected.querySelector("select[name='status-change']").value = savedTasks[i].status;
+            var taskSelected = document.querySelector(".task-item[data-task-id = '" + savedTasks[i].id + "']");
+            var taskStatus = taskSelected.querySelector("select[name='status-change']").value = savedTasks[i].status.toLowerCase();
 
             switch (taskStatus)
             {
